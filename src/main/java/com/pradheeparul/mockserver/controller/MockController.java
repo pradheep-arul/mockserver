@@ -23,29 +23,16 @@ public class MockController {
     }
 
     /**
-     * Handles challenge for webhooks registered with the encoded instance ID
+     * Handles challenge for webhooks
      */
     @ResponseBody
-    @RequestMapping(value = "/temp", method = RequestMethod.GET, consumes = {
+    @RequestMapping(value = "/challenge", method = RequestMethod.GET, consumes = {
             MediaType.TEXT_PLAIN_VALUE
     }, produces = {
             MediaType.TEXT_PLAIN_VALUE
     })
     public Object handleGet1(@RequestParam("validationToken") String validationToken) {
         return "TEXT - " + validationToken;
-    }
-
-    /**
-     * Handles challenge for webhooks registered with the encoded instance ID
-     */
-    @ResponseBody
-    @RequestMapping(value = "/temp", method = RequestMethod.GET, consumes = {
-            MediaType.APPLICATION_JSON_VALUE
-    }, produces = {
-            MediaType.APPLICATION_JSON_VALUE
-    })
-    public Object handleGet2(@RequestParam("validationToken") String validationToken) {
-        return "JSON - " + validationToken;
     }
 
 }
